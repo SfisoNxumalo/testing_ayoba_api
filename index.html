@@ -1,29 +1,62 @@
-<html>
-   <head>
-       <meta name="viewport" content="width=device-width, initial-scale=1">
-       <style>
-           img {
-             display: block;
-             margin-left: auto;
-             margin-right: auto;
-           }
-       </style>
-       <link rel="stylesheet" href="/lib/style.css">
-   </head>
-   <body style="background-color:#1565c0;">
-    <div class="diver">
-         <label>Clients 1 </label>
-       <label id="lblNo">....</label>
-       <button onclick="alert(getMsisdn())">Click me</button> 
+<!--basic ayoba microapp with js, css and logging to the page-->
+<!DOCTYPE html>
+<html lang="en">
 
-       <label>Who? </label>
-       <label id="lblNo2">....</label>
-       <button onclick="getMsisdn2()">Developer?</button> 
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Home</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<body>
+    <h1>ayoba microapp boilerplate</h1>
+    <a href="https://github.com/yusufk/ayoba-microapp-boilerplate">Source code</a>
+    <div id="log-container" hidden>
+        <pre id="logger"></pre>
     </div>
-      
-      
-       <script src="/lib/microapp.js"></script>
-       <script>sayHello()</script>
-       <!-- <img src="logo.png" style="width:72px;"/> -->
-   </body>
+    <button id="btn_copy">Copy to clipboard</button>
+    <br /><br />
+    <table id="methodsTable"></table>
+    <div>
+        <input type="button" value="Select Contact" onClick="selectContact()" />
+        <span type="text" id="selectedContact"></span>
+    </div>
+    <img id="avatarImage" />
+    <img id="pictureRetrieved" />
+    <div id="chatContext" hidden>
+        <div>
+            Message text: <input type="text" id="inputText" />
+            <input type="button" value="Send message" onClick="sendMessage()" />
+            <input type="button" value="Compose message" onClick="composeMessage()" />
+        </div>
+        <div>
+            <input type="button" value="Send media" onClick="sendMedia()" />
+        </div>
+        <div>
+            Lat: <input type="text" id="inputTextLat" size="10">
+            Lon: <input type="text" id="inputTextLon" size="10">
+            <input type="button" value="Send location" onClick="sendLocation()" />
+        </div>
+
+        <div>
+            <input type="button" value="Get ContactJid" onClick="getContactJid()" />
+        </div>
+        <div>
+            <input type="button" value="Get ContactName" onClick="getContactName()" />
+        </div>
+
+        <div>
+            <input type="button" value="Get Contacts" onClick="getContacts()" />
+        </div>
+        <div>
+            <input type="button" value="Get Last Text Messages" onClick="getLastTextMessages()" />
+        </div>
+        <div>
+            <input type="button" value="getFile" onClick="getFile()" />
+        </div>
+    </div>
+    <script type="text/javascript" src="js/ayobastub.js"></script>
+    <script type="text/javascript" src="js/microapp.js"></script>
+</body>
+
 </html>
